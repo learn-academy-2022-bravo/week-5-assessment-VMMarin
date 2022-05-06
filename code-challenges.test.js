@@ -23,36 +23,20 @@ const secretCodeWord2 = "Gobbledygook"
 const secretCodeWord3 = "Eccentric"
 // Expected output: "3cc3ntr1c"
 
+  
 
-describe('codedmessage1', () => {
-        it("takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0", ()=> {const secretCodeWord1 = "Lackadaisical"
-        expect(codedmessage1(secretCodeWord1)).toMatch('L4ck4d41s1c4l')
-            
+     describe("codeWordGen", () => {
+        const secretCodeWord1 = "Lackadaisical"
+        const secretCodeWord2 = "Gobbledygook"
+        const secretCodeWord3 = "Eccentric"
+        it("takes in a string and returns a coded message", () => {
+        expect(codeWordGen(secretCodeWord1)).toEqual("L4ck4d41s1c4l")
+        expect(codeWordGen(secretCodeWord2)).toEqual("G0bbl3dyg00k")
+        expect(codeWordGen(secretCodeWord3)).toEqual("3cc3ntr1c")
         })
-    })   
- 
-describe('codedmessage2', () => {
-        it("takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0", ()=> {const secretCodeWord2 = "Gobbledygook"
-            expect(codedmessage2(secretCodeWord2)).toMatch('G0bbl3dyg00k')
-                
-            })     
-
-describe('codedmessage3', () => {
-        it("takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0", ()=> {const secretCodeWord3 = "Eccentric"
-        expect(codedmessage3(secretCodeWord3)).toMatch('3cc3ntr1c')
-                    
-                })     
+      })
    
                 
-// FAIL  ./code-challenges.test.js
-// codedmessage1
-//   ✕ takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0
-
-// ● codedmessage1 › takes in a string and returns a coded message. The coded message converts 'a' to 4, 'e' to 3, 'i' to 1, and 'o' to 0
-
-//   ReferenceError: codedmessage1 is not defined
-
-                              
 
 // // b) Create the function that makes the test pass.
 
@@ -92,32 +76,18 @@ console.log(codeWordGen(secretCodeWord3))
 // // Expected output: ["Cherry", "Blueberry", "Peach"]
 
 
-// describe('arrayofwords1', () => {
-//     it("takes in an array of words and a single letter and returns all the words that contain that particular letter", ()=> {// const arrayOfWords1 = ["Apple", "Banana", "Plum", "Orange", "Kiwi"]
-// const letterA = "a"
-//         expect([arrayofwords1]).toContain(["Apple", "Banana", "Orange"])
-        
-//     })
-// })   
 
-// describe('arrayofwords2', () => {
-//     it("takes in an array of words and a single letter and returns all the words that contain that particular letter", ()=> {
-// const arrayOfWords2 = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach"]
-// const letterE = "e"
-// // Expected output: ["Cherry", "Blueberry", "Peach"]
-//         expect([arrayofwords2]).toContain(["Cherry", "Blueberry", "Peach"])
-        
-//     })
-// })   
+describe("doesContain", () => {
+  const arrayOfWords1 = ["Apple", "Banana", "Plum", "Orange", "Kiwi"]
+  const letterA = "a"
+  const arrayOfWords2 = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach"]
+  const letterE = "e"
+  it("takes in an array of words and a single letter and returns all the words that contain that particular letter.", () => {
+  expect(doesContain(arrayOfWords1, letterA)).toEqual(["Apple", "Banana", "Orange"])
+  expect(doesContain(arrayOfWords2, letterE)).toEqual(["Cherry", "Blueberry", "Peach"])
+})
+})
 
-
-// FAIL  ./code-challenges.test.js
-// arrayofwords
-//   ✕ takes in an array of words and a single letter and returns all the words that contain that particular letter (1 ms)
-
-// ● arrayofwords › takes in an array of words and a single letter and returns all the words that contain that particular letter
-
-//   ReferenceError: arrayofwords is not defined
 
 
 // // b) Create the function that makes the test pass.
@@ -131,7 +101,7 @@ const letterA = "a"
 // const letterE = "e"
 // Expected output: ["Cherry", "Blueberry", "Peach"]
 
-// //crete a function ifIncludes
+// //create a function doesContain
 // //function will take in an array and a letter and return a new array containing just the words from the original array which contain the designated letter
 // //utilize .filter to iterate through the array
 
@@ -141,40 +111,21 @@ const doesContain = (arr, query) => {
   console.log(doesContain(arrayOfWords1, 'a'))
   console.log(doesContain(arrayOfWords2, 'e'))
 
+
 // // --------------------3) Create a function that takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind.
 
 // // a) Create a test with expect statements using the variable provided.
 
-// describe('hand1', () => {
-//     it("takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind", ()=> {
-//         expect(hand1).toBeTruthy()       
-//     })
-// })   
-
-// describe('hand2', () => {
-//     it("takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind", ()=> {
-//         expect(hand2).toBeFalsy()       
-//     })
-// })   
-
-// describe('hand3', () => {
-//     it("takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind", ()=> {
-//         expect(hand3).toBeFalsy()       
-//     })
-// })   
-
-
-// FAIL  ./code-challenges.test.js
-// hand1
-//   ✕ takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind
-// hand2
-//   ✕ takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind
-// hand3
-//   ✕ takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind
-
-// ● hand1 › takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind
-
-//   ReferenceError: hand1 is not defined
+describe("fullHouse", () => {
+  const hand1 = [5, 5, 5, 3, 3]
+  const hand2 = [5, 5, 3, 3, 4]
+  const hand3 = [5, 5, 5, 5, 4]
+  it("takes in an array of 5 numbers and determines whether or not the array is a fullhouse", () => {
+      expect(fullHouse(hand1)).toEqual(true)
+      expect(fullHouse(hand2)).toEqual(false)
+      expect(fullHouse(hand3)).toEqual(false)
+  })
+})
 
 const hand1 = [5, 5, 5, 3, 3]
 // Expected output: true
@@ -188,8 +139,12 @@ const hand3 = [5, 5, 5, 5, 4]
 
 //create a function that takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind.
 
-//const fullHouse
+
+// create a function named fullHouse
 //function will act on an array and return boolean value
+// create a variable holding an empty object
+// for loop through the array and determine how many times a number is repeated in the array and determine if it is indeed a fullhouse.
+
 
 
 const fullHouse = (arr) => {
